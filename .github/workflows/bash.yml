@@ -1,0 +1,23 @@
+
+name: poll live twitch streamers
+
+on:
+  schedule: 0 0/30 * 1/1 * ? *
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: publish messages if live
+    steps:
+    - name: install jq
+      run: sudo apt-get install jq
+    - name: git co
+      uses: actions/checkout@v2
+    - name: call lil script
+      env:
+        CLIENT_ID: ${{ secrets.LAGGY_BOT_CLIENT_ID }}
+        OAUTH: ${{ secrets.LAGGY_BOT_OAUTH }}
+        DISCORD_WEBHOOK: ${{ secrets.LAGGY_BOT_DISCORD_HOOK }}
+      run: poll.sh
