@@ -21,4 +21,4 @@ jobs:
         CLIENT_ID: ${{ secrets.LAGGY_BOT_CLIENT_ID }}
         OAUTH: ${{ secrets.LAGGY_BOT_OAUTH }}
         DISCORD_WEBHOOK: ${{ secrets.LAGGY_BOT_DISCORD_HOOK }}
-      run: poll.sh
+      run: ./poll.sh
