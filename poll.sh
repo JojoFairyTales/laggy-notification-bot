@@ -9,5 +9,5 @@ cat usernames |\
     | jq -r '.data[] | select(.display_name==\"@\") | select(.is_live==true) | .display_name, .title'" |\
     while read name; do read title; curl --silent --header 'Content-type: application/json' \
         --request POST "${DISCORD_WEBHOOK}" \
-        -d "{\"username\":\"laggy-notification-bot\",\"avatar_url\":\"\",\"content\":\"$name is live: $title (<https://twitch.tv/$name>)\"}" \
+        -d "{\"username\":\"laggybot\",\"avatar_url\":\"\",\"content\":\"$name is live: $title (<https://twitch.tv/$name>)\"}" \
         ; done
