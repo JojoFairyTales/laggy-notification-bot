@@ -12,8 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     name: publish messages if live
     steps:
-    - name: install jq
-      run: sudo apt-get install jq
     - name: git co
       uses: actions/checkout@v2
     - name: call lil script
