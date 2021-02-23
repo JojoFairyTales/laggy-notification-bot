@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-cat usernames |\
-    xargs -I @ bash -c \
+cat usernames \
+    | xargs -I @ bash -c \
         "curl --silent --location --request \
          GET \"https://api.twitch.tv/helix/search/channels?query=@\" \
          --header \"client-id: ${CLIENT_ID}\" \
