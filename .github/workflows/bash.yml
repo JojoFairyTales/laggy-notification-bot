@@ -3,9 +3,7 @@ name: poll live twitch streamers
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
-  push:
-    branches: [ master ]
+    - cron: "*/45 * * * *"
 
 jobs:
   build:
